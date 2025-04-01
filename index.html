@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>An Typing Master</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="header">
+        <h1>An Typing Master</h1>
+        <div class="theme-switcher">
+            <button id="light-theme">Light</button>
+            <button id="dark-theme">Dark</button>
+        </div>
+    </div>
+    <div class="settings-bar">
+        <label for="test-duration">Duration:</label>
+        <select id="test-duration">
+            <option value="15">15s</option>
+            <option value="30">30s</option>
+            <option value="60" selected>60s</option>
+        </select>
+        <label for="font-size">Font Size:</label>
+        <select id="font-size">
+            <option value="1.0">Normal</option>
+            <option value="1.2">Large</option>
+            <option value="1.4">Extra Large</option>
+        </select>
+        <label for="word-wrap">Word Wrap:</label>
+        <select id="word-wrap">
+            <option value="on" selected>On</option>
+            <option value="off">Off</option>
+        </select>
+        <label>Sounds:</label>
+        <input type="checkbox" id="enable-sounds">
+    </div>
+    <div class="content-wrapper">
+        <div class="typing-area">
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="typing-progress"></div>
+            </div>
+            <div class="text-display">
+                <p id="target-text"></p>
+            </div>
+            <textarea id="user-input" placeholder="Start typing here..."></textarea>
+        </div>
+        <div class="results-area">
+            <div class="results-dashboard">
+                <div class="result-box">Time: <span id="time">0</span>s</div>
+                <div class="result-box">WPM: <span id="wpm">0</span></div>
+                <div class="result-box">Accuracy: <span id="accuracy">0%</span></div>
+                <div class="result-box">Errors: <span id="errors">0</span></div>
+                <div class="result-box">Error Rate: <span id="error-rate">0.00</span></div>
+            </div>
+            <canvas id="speed-chart"></canvas>
+            <div class="controls">
+                <button id="start-button">Start Test</button>
+                <button id="reset-button" disabled>Reset</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
